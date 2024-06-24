@@ -156,23 +156,23 @@ nav {
 }
 
 .html .skill-progress {
-  width: 95%;
+  width: 75%;
 }
 
 .css .skill-progress {
-  width: 95%;
+  width: 75%;
 }
 
 .javascript .skill-progress {
-  width: 90%;
+  width: 65%;
 }
 
 .react .skill-progress {
-  width: 85%;
+  width: 60%;
 }
 
 .nodejs .skill-progress {
-  width: 70%;
+  width: 50%;
 }
 
 .expressjs .skill-progress {
@@ -180,11 +180,11 @@ nav {
 }
 
 .mongodb .skill-progress {
-  width: 80%;
+  width: 70%;
 }
 
 .figma .skill-progress {
-  width: 85%;
+  width: 60%;
 }
 
 @media (max-width: 768px) {
