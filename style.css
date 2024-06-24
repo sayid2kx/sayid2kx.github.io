@@ -152,7 +152,8 @@ nav {
   display: flex;
   align-items: center;
   padding-left: 10px;
-  color: white;
+  color: rgb(7, 5, 5);
+  font-weight: bold;
 }
 
 .html .skill-progress {
