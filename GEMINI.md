@@ -50,4 +50,4 @@ x-www-browser index.html
   - **Auto-updating Footer Year:** Sets the current year in the footer.
   - **Navbar Scroll Effect:** Adds a `scrolled` class to the navbar when the user scrolls down, triggering the glassmorphism effect.
   - **Smooth Scrolling:** Implements smooth navigation to different sections when anchor links are clicked.
-  - **Dark Mode Toggle:** Manages the adding/removing of the `.dark-mode` class on the body and persists the user's choice across sessions using `localStorage`.
+  - **Dark Mode Toggle:** Manages the adding/removing of the `.dark-mode` class on the body and persists the user's choice across sessions using `localStorage
