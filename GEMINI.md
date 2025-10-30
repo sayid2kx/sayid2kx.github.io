@@ -4,10 +4,12 @@
 
 This project is a modern, single-page personal portfolio for Sarowar Jahan Sayid, a full-stack web developer. It is built using vanilla HTML, CSS, and JavaScript, with no external frameworks.
 
-The key feature is its "Liquid Design" aesthetic, which includes:
-- A dynamic, animated background with colorful, blurred "blob" shapes.
-- A glassmorphism effect (frosted glass) on UI elements like the navigation bar, content containers, and footer.
-- A fully functional light/dark mode theme that can be toggled by the user.
+The current experience leans into a refined "Liquid Design" aesthetic:
+- A dynamic, animated background with softly blurred "blob" shapes that shift color.
+- A glassmorphism treatment on navigation, content containers, cards, and footer for a floating, frosted-glass feel.
+- A light theme featuring a green-toned conic gradient border around the main content container (no more pink/purple accents).
+- A deep, radial-gradient dark theme with matching green highlights, unified white typography, and recolored blobs.
+- A reimagined skills section composed of four feature cards, each with its own icon, gradient panel, and tagged highlights for Shopify, JavaScript, and collaboration strengths.
 
 The portfolio is structured into several sections: a hero introduction, an about me section, education history, and a grid of technical skills.
 
@@ -34,11 +36,12 @@ x-www-browser index.html
 
 ### CSS (`style.css`)
 
-- A color palette and standard dimensions are defined using CSS variables in the `:root` for easy theme management.
-- The file is organized by component, with general styles first, followed by specific component styles (e.g., `.nav-container`, `.hero`, `.profile-pic`).
-- Dark mode is implemented by adding a `.dark-mode` class to the `<body>` tag. All dark mode-specific overrides are grouped at the end of the file under the `/* Dark Mode Styles */` comment.
-- The current dark mode implementation only styles the "chrome" of the page (background, nav, footer), leaving the main content container with its default light theme to create a high-contrast, "floating" appearance.
-- Responsive design for smaller screens is handled within an `@media (max-width: 768px)` block.
+- CSS variables in the `:root` capture the primary palette and spacing scales, keeping color swaps straightforward.
+- Styles are organized by component (e.g., `.nav-container`, `.hero`, `.skills-feature`) with layout utilities and media queries grouped near the relevant sections.
+- The main content container uses a green conic gradient pseudo-element and translucent interior background to emphasize the liquid/glass hybrid look.
+- The skills section introduces `.skills-wrapper`, `.skills-feature`, and `.feature-tags` classes to render icon-led feature panels with chip-style skill tags; the layout stays single-column and centers within a 920px max width.
+- Dark mode relies on a `.dark-mode` class applied to the `<body>` tag. Overrides near the end of the file recolor backgrounds, gradients, and typographic elements while ensuring all copy renders white for readability.
+- Responsive tweaks ensure comfortable padding on smaller screens and scale the hero and skills sections without breaking the floating aesthetic.
 
 ### JavaScript (`script.js`)
 

@@ -168,7 +168,15 @@
         position: absolute;
         inset: 0;
         border-radius: 24px;
-        background: conic-gradient(from 180deg at 50% 50%, #ea4335, #fbbc04, #34a853, #4285f4, #ea4335);
+        background: conic-gradient(
+          from 180deg at 50% 50%,
+          #d9f7d6,
+          #b7efc5,
+          #95d5b2,
+          #74c69d,
+          #52b788,
+          #d9f7d6
+        );
         z-index: -1;
       }
 
@@ -388,6 +396,76 @@
         gap: 1rem;
       }
 
+      .skills-wrapper {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2rem;
+        align-items: stretch;
+        max-width: 920px;
+        margin: 0 auto;
+      }
+
+      .skills-feature {
+        position: relative;
+        padding: 2.5rem;
+        border-radius: 22px;
+        background: linear-gradient(135deg, rgba(82, 183, 136, 0.18), rgba(52, 87, 70, 0.12));
+        border: 1px solid rgba(82, 183, 136, 0.25);
+        box-shadow: 0 20px 45px rgba(33, 74, 57, 0.15);
+        overflow: hidden;
+      }
+
+      .skills-feature::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: linear-gradient(135deg, rgba(82, 183, 136, 0.25), rgba(217, 247, 214, 0.1));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      .skills-feature:hover::after {
+        opacity: 1;
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 18px;
+        background: rgba(82, 183, 136, 0.25);
+        display: grid;
+        place-items: center;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: #256749;
+      }
+
+      .feature-content h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        color: #1f3b2f;
+      }
+
+      .feature-content p {
+        color: #375444;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+
+      .feature-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+      }
+
+      .skill-tag.primary {
+        background: rgba(82, 183, 136, 0.2);
+        border: 1px solid rgba(82, 183, 136, 0.45);
+        color: #1f3b2f;
+      }
+
       .skill-tag {
         background: rgba(255, 255, 255, 0.6);
         backdrop-filter: blur(10px);
@@ -408,6 +486,12 @@
         border-color: rgba(229, 231, 235, 0.8);
       }
 
+      @media (max-width: 767px) {
+        .skills-feature {
+          padding: 2rem;
+        }
+      }
+
       footer {
         background: rgba(255, 255, 255, 0.6);
         backdrop-filter: blur(10px);
@@ -421,7 +505,8 @@
 
       /* Dark Mode Styles */
       body.dark-mode {
-        background-color: #121826;
+        background: radial-gradient(circle at top, #163a2e 0%, #0b1f18 45%, #06130f 100%);
+        color: #ffffff;
       }
 
       .dark-mode .nav-links a,
@@ -430,17 +515,140 @@
       }
 
       .dark-mode nav.scrolled {
-        background: rgba(18, 24, 38, 0.7);
+        background: rgba(13, 35, 27, 0.7);
       }
 
       .dark-mode footer {
-        background: rgba(30, 41, 59, 0.6);
-        border-color: rgba(55, 65, 81, 0.5);
+        background: rgba(9, 26, 21, 0.7);
+        border-color: rgba(56, 94, 76, 0.4);
         color: #FFFFFF;
       }
-      
+
       .dark-mode .profile-pic-inner {
-        background: #121826;
+        background: #0c1d17;
+      }
+
+      .dark-mode .blob1 {
+        background: #1f6f54;
+      }
+
+      .dark-mode .blob2 {
+        background: #2d9f74;
+      }
+
+      .dark-mode .blob3 {
+        background: #52b788;
+      }
+
+      .dark-mode .main-container::before {
+        background: conic-gradient(
+          from 180deg at 50% 50%,
+          rgba(121, 189, 154, 0.55),
+          rgba(96, 176, 137, 0.6),
+          rgba(74, 156, 118, 0.65),
+          rgba(59, 137, 102, 0.7),
+          rgba(96, 176, 137, 0.6),
+          rgba(121, 189, 154, 0.55)
+        );
+      }
+
+      .dark-mode .main-content {
+        background: rgba(28, 68, 54, 0.7);
+        border: 1px solid rgba(121, 189, 154, 0.25);
+        color: #ffffff;
+        box-shadow: 0 25px 55px rgba(4, 12, 9, 0.45);
+      }
+
+      .dark-mode h1,
+      .dark-mode h2,
+      .dark-mode h3,
+      .dark-mode h4,
+      .dark-mode h5,
+      .dark-mode h6 {
+        color: #ffffff;
+      }
+
+      .dark-mode p,
+      .dark-mode li,
+      .dark-mode span,
+      .dark-mode a {
+        color: #ffffff;
+      }
+
+      .dark-mode .nav-links a:hover {
+        color: #ffffff;
+      }
+
+      .dark-mode .skill-tag {
+        color: #ffffff;
+        border-color: rgba(121, 189, 154, 0.35);
+        background: rgba(21, 51, 41, 0.6);
+      }
+
+      .dark-mode .skill-tag:hover {
+        background: rgba(27, 65, 52, 0.75);
+        border-color: rgba(121, 189, 154, 0.6);
+        color: #ffffff;
+      }
+
+      .dark-mode .education-item,
+      .dark-mode .experience-item {
+        color: #ffffff;
+      }
+
+      .dark-mode .education-item .degree,
+      .dark-mode .education-item .duration,
+      .dark-mode .education-item .grade {
+        color: #ffffff;
+      }
+
+      .dark-mode .hero-content h1,
+      .dark-mode .hero-content h1 .code-tag,
+      .dark-mode .hero-content h1 .name,
+      .dark-mode .hero-content .tagline,
+      .dark-mode .hero-content .location {
+        color: #ffffff;
+      }
+
+      .dark-mode .skills-feature {
+        background: linear-gradient(135deg, rgba(44, 94, 72, 0.4), rgba(15, 46, 37, 0.4));
+        border-color: rgba(121, 189, 154, 0.4);
+        box-shadow: 0 25px 55px rgba(4, 12, 9, 0.45);
+      }
+
+      .dark-mode .skills-feature::after {
+        background: linear-gradient(135deg, rgba(121, 189, 154, 0.35), rgba(59, 137, 102, 0.3));
+      }
+
+      .dark-mode .feature-icon {
+        background: rgba(82, 183, 136, 0.22);
+        color: #d9f7d6;
+      }
+
+      .dark-mode .feature-content h3,
+      .dark-mode .feature-content p,
+      .dark-mode .skills-card h4 {
+        color: #ffffff;
+      }
+
+      .dark-mode .feature-content p {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .dark-mode .skills-card {
+        background: rgba(15, 46, 37, 0.65);
+        border-color: rgba(121, 189, 154, 0.25);
+        box-shadow: 0 20px 45px rgba(4, 12, 9, 0.35);
+      }
+
+      .dark-mode .skills-card:hover {
+        box-shadow: 0 25px 55px rgba(4, 12, 9, 0.45);
+      }
+
+      .dark-mode .skill-tag.primary {
+        background: rgba(121, 189, 154, 0.25);
+        border-color: rgba(121, 189, 154, 0.55);
+        color: #ffffff;
       }
 
       @media (max-width: 768px) {
