@@ -60,3 +60,23 @@
       // Check for saved preference
       const savedDarkMode = localStorage.getItem('darkMode') === 'true';
       applyDarkMode(savedDarkMode);
+
+      // Scroll to Top Button
+      const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+      // Show/hide scroll to top button based on scroll position
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          scrollToTopBtn.classList.add('visible');
+        } else {
+          scrollToTopBtn.classList.remove('visible');
+        }
+      });
+
+      // Scroll to top when button is clicked
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
