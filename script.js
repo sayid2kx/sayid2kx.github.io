@@ -33,34 +33,6 @@
         })
       })
 
-      // Dark Mode Toggle
-      const darkModeToggle = document.getElementById('dark-mode-toggle');
-      const body = document.body;
-      const moonIcon = document.getElementById('moon-icon');
-      const sunIcon = document.getElementById('sun-icon');
-
-      const applyDarkMode = (isDark) => {
-        if (isDark) {
-          body.classList.add('dark-mode');
-          moonIcon.style.display = 'none';
-          sunIcon.style.display = 'block';
-        } else {
-          body.classList.remove('dark-mode');
-          moonIcon.style.display = 'block';
-          sunIcon.style.display = 'none';
-        }
-      };
-
-      darkModeToggle.addEventListener('click', () => {
-        const isDarkMode = body.classList.toggle('dark-mode');
-        localStorage.setItem('darkMode', isDarkMode);
-        applyDarkMode(isDarkMode);
-      });
-
-      // Check for saved preference
-      const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-      applyDarkMode(savedDarkMode);
-
       // Scroll to Top Button
       const scrollToTopBtn = document.getElementById('scroll-to-top');
 
