@@ -88,23 +88,39 @@
         width: 100%;
         top: 0;
         z-index: 1000;
-        transition: all 0.3s ease;
+        padding: 0;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
       nav.scrolled {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(20px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background: transparent;
+        padding: 0;
       }
 
       .nav-container {
-        max-width: 1200px;
+        max-width: 100%;
+        width: 100%;
         margin: 0 auto;
         padding: 1rem 2rem;
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
+        background: transparent;
+        border-radius: 0;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      nav.scrolled .nav-container {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        border-radius: 50px;
+        padding: 0.75rem 2rem;
+        max-width: 1200px;
+        width: auto;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        margin: 0 auto;
       }
 
       .logo {
@@ -113,9 +129,16 @@
         border-radius: 50%;
         overflow: hidden;
         position: absolute;
-        top: 0;
+        top: 50%;
         left: 2rem;
-        margin-top: 10px;
+        transform: translateY(-50%);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      nav.scrolled .logo {
+        width: 36px;
+        height: 36px;
+        left: 1.5rem;
       }
 
       .logo img {
@@ -128,18 +151,44 @@
         display: flex;
         gap: 2rem;
         list-style: none;
+        transition: gap 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      nav.scrolled .nav-links {
+        gap: 1.5rem;
       }
 
       .nav-links a {
         color: var(--text-dark);
         text-decoration: none;
-        transition: color 0.3s;
+        transition: all 0.3s;
         font-size: 0.95rem;
         font-weight: 500;
+        position: relative;
+      }
+
+      nav.scrolled .nav-links a {
+        font-size: 0.9rem;
+      }
+
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #52b788, #34a853);
+        transition: width 0.3s ease;
+        border-radius: 2px;
       }
 
       .nav-links a:hover {
         color: var(--primary-color);
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
       }
 
       .dark-mode-toggle {
@@ -151,7 +200,11 @@
         border: none;
         cursor: pointer;
         color: var(--text-dark);
-        transition: color 0.3s;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      nav.scrolled .dark-mode-toggle {
+        right: 1.5rem;
       }
 
       .main-container {
@@ -822,9 +875,14 @@
       }
 
       .dark-mode nav.scrolled {
-        background: rgba(29, 29, 31, 0.72);
+        background: transparent;
+      }
+
+      .dark-mode nav.scrolled .nav-container {
+        background: rgba(29, 29, 31, 0.85);
         backdrop-filter: saturate(180%) blur(20px);
-        border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
       }
 
       .dark-mode footer {
@@ -1081,6 +1139,12 @@
         box-shadow: 0 8px 30px rgba(48, 209, 88, 0.6);
       }
 
+@media (max-width: 1024px) {
+nav.scrolled .nav-container {
+max-width: calc(100% - 4rem);
+}
+}
+
 @media (max-width: 768px) {
 .main-content {
 padding: 1.5rem;
@@ -1171,7 +1235,13 @@ font-size: 0.9rem;
 }
 
 .logo {
-left: 1.5rem;
+left: 1rem;
+}
+
+nav.scrolled .logo {
+left: 1rem;
+width: 32px;
+height: 32px;
 }
 
 .social-links {
@@ -1183,7 +1253,26 @@ grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 }
 
 .dark-mode-toggle {
-right: 1.5rem;
+right: 1rem;
+}
+
+nav.scrolled .dark-mode-toggle {
+right: 1rem;
+}
+
+nav {
+padding: 0;
+}
+
+nav.scrolled {
+padding: 0;
+}
+
+nav.scrolled .nav-container {
+max-width: calc(100% - 3rem);
+padding: 0.6rem 1.5rem;
+border-radius: 40px;
+margin: 0 auto;
 }
 
 .framed-section .section-border {
