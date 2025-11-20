@@ -63,7 +63,14 @@ Three education milestones with detailed information:
 - **Advanced Residential Model College**: H.S.C, Science (2017-2019) - Grade: 4.50
 - **Atharabari M.C High School**: S.S.C, Science (2012-2017) - Grade: 4.73
 
-### 4. Skills Section
+### 4. GitHub Statistics Section
+Apple-inspired glassmorphism layout highlighting live GitHub insights:
+- **Profile Metrics**: Public repositories, followers, following, and account type pulled directly from the GitHub API
+- **Activity Metrics**: Aggregated star count and recent commit activity (rolling 30-day approximation)
+- **Contribution Graph**: Embedded contribution heatmap showcasing daily commits throughout the year
+- **Profile CTA**: Quick link to the full GitHub profile
+
+### 5. Skills Section
 Four main skill categories:
 
 ## 🎯 Key Features
@@ -79,6 +86,7 @@ Four main skill categories:
 - **Full Viewport Sections**: Each section takes full screen height on desktop
 - **Hover Effects**: Enhanced shadows, color transitions, and scale animations
 - **Card Interactions**: Gradient overlays on hover with smooth transitions
+- **Live GitHub Stats**: Real-time profile metrics, contribution chart, and commit cadence powered by the GitHub API
 
 ### Animations
 - **Fade-in Effects**: Staggered animations for hero elements
@@ -185,6 +193,16 @@ Full-stack web developer specializing in:
 - **Equal Color Sections**: Added 5th color (purple) to create 5 equal sections (72° each)
 - **Clear Color Breaks**: Implemented distinct color stops to prevent color mixing at transitions
 - **Smooth Animation**: Maintained smooth rotation with proper color boundaries
+
+### Hero Portrait Simplification
+- **Spinner Removal**: Replaced the rotating gradient ring with a calm, glassy frame to reduce motion and focus on the photo
+- **Subtle Framing**: Added translucent border, inner glow, and shadow for a premium but minimal presentation
+
+### GitHub Statistics Section (New)
+- **Placement**: Positioned immediately after the About section for storytelling flow
+- **Live Data Fetching**: Uses the GitHub REST API to surface repositories, followers, stars, and recent commits
+- **Contribution Graph**: Embedded yearly heatmap to visualize consistency at a glance
+- **Responsive Layout**: Cards and graph adapt to mobile with the existing glassmorphism system
 
 ### Location Element Redesign
 - **Location Icon**: Added SVG location pin icon for better visual representation
