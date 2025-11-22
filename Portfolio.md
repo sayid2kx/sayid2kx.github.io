@@ -237,13 +237,14 @@ Full-stack web developer specializing in:
 - **Clean Container**: Location icon and "Bangladesh" text displayed together in a styled container
 - **Hover Effects**: Subtle hover animation that changes icon color to green
 - **Responsive Design**: Properly scaled for mobile devices
-  212:
-  213: ### Mobile Optimization & Responsiveness (Latest)
-  214: - **Navigation**: Optimized for mobile with a clean, visible link structure. Logo aligned to the left and links centered below for balanced accessibility.
-  215: - **Layout**: Implemented single-column stacks for grids (About, Skills, GitHub Stats) on screens < 768px.
-  216: - **Typography**: Adjusted font sizes for headings and body text to prevent overflow and ensure readability on small screens.
-  217: - **Spacing**: Refined padding and margins to maximize screen real estate on mobile devices.
-  218: - **Touch Targets**: Ensured interactive elements are sized appropriately for touch interaction.
+
+### Mobile Optimization & Responsiveness (Latest)
+
+- **Navigation**: Optimized for mobile with a clean, visible link structure. Logo aligned to the left and links centered below for balanced accessibility.
+- **Layout**: Implemented single-column stacks for grids (About, Skills, GitHub Stats) on screens < 768px.
+- **Typography**: Adjusted font sizes for headings and body text to prevent overflow and ensure readability on small screens.
+- **Spacing**: Refined padding and margins to maximize screen real estate on mobile devices.
+- **Touch Targets**: Ensured interactive elements are sized appropriately for touch interaction.
 
 ## 📄 License
 
