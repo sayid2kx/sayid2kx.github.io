@@ -122,3 +122,4 @@
       if (document.getElementById('github-stats')) {
         fetchGitHubStats();
       }
+
