@@ -12,6 +12,7 @@ A modern, responsive portfolio with Apple-inspired liquid design, glassmorphism 
 - **Live GitHub Stats** via GitHub API with contribution graph
 - **Smooth Animations** including fade-ins, hover effects, and floating icons
 - **Fully Responsive** with mobile-optimized layouts and touch targets
+- **Mobile Compatible** - works on all browsers including older iOS Safari and Android
 - **Sticky Navigation** with theme toggle and smooth scrolling
 
 ## 🎨 Design Highlights
@@ -24,7 +25,7 @@ A modern, responsive portfolio with Apple-inspired liquid design, glassmorphism 
 - Glassmorphism cards with `saturate(180%) blur(30px)`
 - Gradient hover effects and shadow enhancements
 - Semantic HTML5 with SEO-optimized meta tags
-- CSS nesting for maintainable, organized styles
+- Standard CSS syntax for maximum browser compatibility
 
 ## Structure
 
@@ -48,7 +49,7 @@ portfolio/
 ## 🛠️ Tech Stack
 
 - **HTML5**: Semantic structure, ARIA labels, Open Graph tags
-- **CSS3**: Variables, nesting, Grid/Flexbox, keyframe animations
+- **CSS3**: Variables, Grid/Flexbox, keyframe animations (mobile-optimized)
 - **JavaScript**: Dark mode toggle (localStorage), smooth scrolling, GitHub API integration
 
 ## 🚀 Performance
