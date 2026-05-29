@@ -1,28 +1,26 @@
-# Portfolio Website - Sarowar Jahan Sayid
+# Sarowar Jahan Sayid - Personal Portfolio
 
-A modern, responsive portfolio with Apple-inspired liquid design, glassmorphism effects, and smooth animations. Built with vanilla HTML, CSS, and JavaScript.
+A modern, responsive portfolio showcasing the career transition from Computer Science graduate to hardware business owner at **Shahin Machinery and Hardware Store**. Built with vanilla HTML, CSS, and JavaScript.
 
 **🌐 Live:** [sayid2kx.github.io](https://sayid2kx.github.io/)  
-**📧 Contact:** sayid2kx@gmail.com | 📍 Bangladesh
+**📧 Contact:** sayid2kx@gmail.com | 📍 Mymensingh, Bangladesh
 
 ## ✨ Features
 
-- **Apple-Style Dark Mode** with glassmorphism and backdrop blur effects
 - **Liquid Background** with animated gradient blobs
-- **Live GitHub Stats** via GitHub API with contribution graph
+- **Career Timeline** - Visual journey from CS student to entrepreneur
+- **Store Section** - Showcasing product categories (Machinery, Cycle Parts, Hardware)
+- **Contact Section** - Phone, WhatsApp, email, address, business hours
 - **Smooth Animations** including fade-ins, hover effects, and floating icons
-- **Fully Responsive** with mobile-optimized layouts and touch targets
-- **Mobile Compatible** - works on all browsers including older iOS Safari and Android
-- **Sticky Navigation** with theme toggle and smooth scrolling
+- **Fully Responsive** with mobile-optimized layouts and spacing
+- **Sticky Navigation** with smooth scrolling to sections
 
 ## 🎨 Design Highlights
 
-**Light Mode:** Green palette (`#52b788`) with light gray backgrounds  
-**Dark Mode:** Dark purple-gray (`#463D4F`) with iOS-style accents (`#30d158`, `#32ade6`)
+**Color Palette:** Green theme (`#52b788`) with light backgrounds and glassmorphism effects
 
 **Visual Elements:**
-
-- Glassmorphism cards with `saturate(180%) blur(30px)`
+- Glassmorphism cards with backdrop blur
 - Gradient hover effects and shadow enhancements
 - Semantic HTML5 with SEO-optimized meta tags
 - Standard CSS syntax for maximum browser compatibility
@@ -33,24 +31,25 @@ A modern, responsive portfolio with Apple-inspired liquid design, glassmorphism 
 portfolio/
 ├── index.html    # Main HTML
 ├── style.css     # Styles & animations
-├── script.js     # Dark mode, smooth scroll, GitHub API
+├── script.js     # Navbar scroll, smooth scroll, scroll-to-top
 └── assets/
     └── Sayid.jpg # Profile picture
 ```
 
 ## 🧩 Sections
 
-1. **Hero** - Name display, location badge, social links, profile picture
-2. **About** - Info cards (Who I Am, What I Do, My Approach) + statistics
-3. **Education** - Three education milestones with grades
-4. **GitHub Stats** - Live metrics, contribution graph, profile CTA
-5. **Skills** - Four main skill categories
+1. **Hero** - Name, transition badge (CS → Business Owner), location, social links
+2. **About** - Info cards (Who I Am, What I Do, My Approach) + business statistics
+3. **Journey** - Visual timeline: CS Student → Web Developer → Hardware Business Owner
+4. **Education** - Three education milestones with grades
+5. **Store** - Product categories: Industrial Machinery, Cycle Parts, General Hardware
+6. **Contact** - Address, phone numbers, email, WhatsApp, business hours
 
 ## 🛠️ Tech Stack
 
-- **HTML5**: Semantic structure, ARIA labels, Open Graph tags
-- **CSS3**: Variables, Grid/Flexbox, keyframe animations (mobile-optimized)
-- **JavaScript**: Dark mode toggle (localStorage), smooth scrolling, GitHub API integration
+- **HTML5**: Semantic structure, Open Graph tags
+- **CSS3**: Variables, Grid/Flexbox, keyframe animations, responsive breakpoints
+- **JavaScript**: Navbar scroll effect, smooth scrolling, scroll-to-top
 
 ## 🚀 Performance
 
@@ -61,11 +60,12 @@ portfolio/
 
 ## 📞 Connect
 
-- **GitHub:** [github.com/sayid2kx](https://github.com/sayid2kx)
-- **LinkedIn:** [linkedin.com/in/sayid2kx](https://linkedin.com/in/sayid2kx)
+- **Facebook:** [facebook.com/sayid2kx](https://facebook.com/sayid2kx)
 - **Twitter:** [x.com/sayid2kx](https://x.com/sayid2kx)
+- **WhatsApp:** +880 1721-151361
+- **Email:** sayid2kx@gmail.com
 
 ---
 
-**Built with ❤️ using vanilla HTML, CSS, and JavaScript**  
-© 2025 Sarowar Jahan Sayid. All rights reserved.
+**Built with ❤️ using vanilla HTML, CSS, and JavaScript**
+© Sarowar Jahan Sayid
