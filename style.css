@@ -50,10 +50,14 @@ body {
   from {
     opacity: 0;
     transform: translateY(30px);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
   to {
     opacity: 1;
     transform: translateY(0);
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
   }
 }
 
@@ -61,10 +65,14 @@ body {
   from {
     opacity: 0;
     transform: scale(0.8);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
   to {
     opacity: 1;
     transform: scale(1);
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
   }
 }
 
@@ -94,9 +102,12 @@ body {
 .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
+  filter: blur(60px);
   opacity: 0.3;
   transition: background 0.3s;
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .blob.blob1 {
@@ -706,8 +717,6 @@ h2::after {
   border: 1.5px solid rgba(82, 183, 136, 0.3);
   text-align: center;
   transition: all 0.3s ease;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
@@ -815,8 +824,6 @@ h2::after {
 
 .skill-tag {
   background: rgba(255, 255, 255, 0.6);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(229, 231, 235, 0.5);
   color: var(--text-dark);
   padding: 0.75rem 1.5rem;
@@ -956,8 +963,6 @@ footer {
   gap: 1.25rem;
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.6);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(82, 183, 136, 0.2);
   transition: all 0.3s ease;
@@ -1099,8 +1104,6 @@ footer {
 .journey-card {
   flex: 1;
   background: rgba(255, 255, 255, 0.6);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
   border: 1px solid rgba(82, 183, 136, 0.2);
   border-radius: 18px;
   padding: 1.75rem;
