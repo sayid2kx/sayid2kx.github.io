@@ -18,6 +18,7 @@
 
 html {
   scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -28,6 +29,9 @@ body {
   background-color: #f0f4f8;
   overflow-x: hidden;
   transition: background-color 0.3s, color 0.3s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* ============================================
@@ -143,6 +147,7 @@ nav.scrolled {
 
 nav.scrolled .nav-container {
   background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   border-radius: 50px;
@@ -268,6 +273,7 @@ nav .nav-links a:hover::after {
   padding: 3rem;
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
 }
 
@@ -301,13 +307,13 @@ nav .nav-links a:hover::after {
 }
 
 .hero .hero-content h1 {
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
   margin-bottom: 1.5rem;
   color: var(--text-dark);
   font-family: "Courier New", monospace;
-  white-space: nowrap;
   animation: fadeInUp 0.8s ease-out;
   line-height: 1.2;
+  word-break: break-word;
 }
 
 .hero .hero-content h1 .name {
@@ -320,7 +326,7 @@ nav .nav-links a:hover::after {
 }
 
 .hero .hero-content .tagline {
-  font-size: 1.2rem;
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
   color: var(--text-light);
   margin-bottom: 1.5rem;
   line-height: 1.8;
@@ -375,6 +381,7 @@ nav .nav-links a:hover::after {
   margin-bottom: 1.5rem;
   padding: 0.6rem 1.25rem;
   background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: 50px;
   border: 1.5px solid rgba(82, 183, 136, 0.35);
@@ -431,6 +438,7 @@ nav .nav-links a:hover::after {
   color: var(--text-dark);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1.5px solid rgba(82, 183, 136, 0.3);
   position: relative;
@@ -573,6 +581,7 @@ section:last-child {
   inset: 0;
   border-radius: inherit;
   background: rgba(255, 255, 255, 0.82);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   z-index: -1;
 }
@@ -697,6 +706,7 @@ h2::after {
   border: 1.5px solid rgba(82, 183, 136, 0.3);
   text-align: center;
   transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
@@ -805,6 +815,7 @@ h2::after {
 
 .skill-tag {
   background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(229, 231, 235, 0.5);
   color: var(--text-dark);
@@ -834,6 +845,7 @@ h2::after {
    ============================================ */
 footer {
   background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(229, 231, 235, 0.5);
   color: var(--text-dark);
@@ -944,6 +956,7 @@ footer {
   gap: 1.25rem;
   padding: 1.5rem;
   background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: 16px;
   border: 1px solid rgba(82, 183, 136, 0.2);
@@ -1086,6 +1099,7 @@ footer {
 .journey-card {
   flex: 1;
   background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(82, 183, 136, 0.2);
   border-radius: 18px;
@@ -1154,6 +1168,41 @@ footer {
   font-size: 0.78rem;
 }
 
+@media (min-width: 1400px) {
+  .main-container {
+    max-width: 1320px;
+  }
+
+  .hero {
+    gap: 6rem;
+  }
+
+  .hero .hero-content h1 {
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+  }
+
+  .hero .profile-pic {
+    width: 340px;
+    height: 340px;
+  }
+
+  .framed-section .section-border {
+    padding: 4rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  .about-grid {
+    gap: 4rem;
+  }
+
+  .about-card {
+    padding: 3rem;
+  }
+}
+
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
@@ -1173,11 +1222,6 @@ footer {
     padding-top: 0;
     text-align: center;
     gap: 2rem;
-  }
-
-  .hero .hero-content h1 {
-    font-size: 2rem;
-    white-space: normal;
   }
 
   .hero .hero-content h1 .name {
