@@ -7,6 +7,8 @@
       name="description"
       content="Sarowar Jahan Sayid - Computer Science graduate and entrepreneur running Shahin Machinery and Hardware Store in Mymensingh, Bangladesh. Quality machinery, cycle parts, and general hardware supplies."
     />
+    <meta name="theme-color" content="#f0f4f8" />
+    <meta name="color-scheme" content="light" />
     <meta
       name="keywords"
       content="Hardware Store, Machinery, Cycle Parts, Business, Entrepreneur, Mymensingh, Bangladesh, Shahin Machinery, General Hardware, Industrial Equipment"
@@ -24,6 +26,7 @@
       name="twitter:description"
       content="Managing Shahin Machinery and Hardware Store in Mymensingh, Bangladesh"
     />
+    <link rel="preload" as="image" href="assets/Sayid.jpg" />
     <link rel="icon" type="image/png" href="assets/Sayid.jpg" />
     <title>Sarowar Jahan Sayid - Hardware Business Owner | Shahin Machinery</title>
     <link rel="stylesheet" href="style.css" />
@@ -37,15 +40,28 @@
 
     <nav id="navbar">
       <div class="nav-container">
-        <a href="#">
+        <a href="#" class="logo-link" aria-label="Back to top">
           <div class="logo">
-            <img src="assets/Sayid.jpg" alt="Sarowar Jahan Sayid" />
+            <img src="assets/Sayid.jpg" alt="Sarowar Jahan Sayid" width="80" height="80" decoding="async" />
           </div>
         </a>
-        
-        <ul class="nav-links">
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Open navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="primary-navigation">
           <li><a href="#about">About</a></li>
           <li><a href="#journey">Journey</a></li>
+          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#store">Store</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -85,12 +101,12 @@
               <span class="location-text">Bangladesh</span>
             </p>
             <div class="social-links">
-              <a href="https://facebook.com/sayid2kx" target="_blank" title="Facebook">
+              <a href="https://facebook.com/sayid2kx" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook profile">
                 <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
               </a>
-              <a href="https://x.com/sayid2kx" target="_blank" title="Twitter">
+              <a href="https://x.com/sayid2kx" target="_blank" rel="noopener noreferrer" title="X / Twitter" aria-label="X profile">
                 <svg
                   width="20"
                   height="20"
@@ -102,7 +118,7 @@
                   />
                 </svg>
               </a>
-              <a href="https://wa.me/8801721151361" target="_blank" title="WhatsApp">
+              <a href="https://wa.me/8801721151361" target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="WhatsApp contact">
                 <svg
                   width="20"
                   height="20"
@@ -114,7 +130,7 @@
                   />
                 </svg>
               </a>
-              <a href="mailto:sayid2kx@gmail.com" title="Email">
+              <a href="mailto:sayid2kx@gmail.com" title="Email" aria-label="Email Sayid">
                 <svg
                   width="20"
                   height="20"
@@ -135,8 +151,94 @@
           <div class="hero-image">
             <div class="profile-pic">
               <div class="profile-pic-inner">
-                <img src="assets/Sayid.jpg" alt="Sarowar Jahan Sayid" />
+                <img src="assets/Sayid.jpg" alt="Sarowar Jahan Sayid" width="951" height="960" fetchpriority="high" decoding="async" />
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="framed-section">
+          <div class="section-border">
+            <h2>About</h2>
+            <div class="about-content">
+              <div class="about-grid">
+                <div class="about-text">
+                  <article class="about-card">
+                    <div class="card-icon">👋</div>
+                    <h3>Technology Mindset, Business Focus</h3>
+                    <p>
+                      I studied Computer Science and now apply that practical,
+                      problem-solving mindset to Shahin Machinery and Hardware
+                      Store. My current focus is serving local customers with
+                      reliable machinery, cycle parts, and general hardware
+                      supplies.
+                    </p>
+                  </article>
+                </div>
+                <div class="about-stats" aria-label="Profile highlights">
+                  <div class="stat-card">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Product Areas</div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-number">2026</div>
+                    <div class="stat-label">Business Focus</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="gallery" class="framed-section gallery-section">
+          <div class="section-border">
+            <div class="gallery-header">
+              <h2>Life In Frames</h2>
+            </div>
+
+            <div class="gallery-grid" aria-label="Personal photo gallery">
+              <figure class="gallery-card gallery-card-portrait" role="button" tabindex="0" aria-label="Everyday Presence">
+                <img src="assets/sayid1.jpg" alt="Personal photo of Sarowar Jahan Sayid" width="1536" height="2048" loading="lazy" decoding="async" />
+                <figcaption>
+                  <strong>Everyday Presence</strong>
+                </figcaption>
+              </figure>
+              <figure class="gallery-card gallery-card-portrait" role="button" tabindex="0" aria-label="Focused And Grounded">
+                <img src="assets/sayid2.jpg" alt="Personal gallery photo of Sarowar Jahan Sayid" width="1536" height="2048" loading="lazy" decoding="async" />
+                <figcaption>
+                  <strong>Focused And Grounded</strong>
+                </figcaption>
+              </figure>
+              <figure class="gallery-card gallery-card-portrait" role="button" tabindex="0" aria-label="Simple Moments">
+                <img src="assets/sayid3.jpg" alt="Lifestyle photo of Sarowar Jahan Sayid" width="960" height="1280" loading="lazy" decoding="async" />
+                <figcaption>
+                  <strong>Simple Moments</strong>
+                </figcaption>
+              </figure>
+              <figure class="gallery-card gallery-card-square" role="button" tabindex="0" aria-label="Personal Style">
+                <img src="assets/sayid4.jpg" alt="Portrait photo of Sarowar Jahan Sayid" width="1582" height="1729" loading="lazy" decoding="async" />
+                <figcaption>
+                  <strong>Personal Style</strong>
+                </figcaption>
+              </figure>
+              <figure class="gallery-card gallery-card-portrait" role="button" tabindex="0" aria-label="Life Outside Work">
+                <img src="assets/sayid5.jpg" alt="Personal moment from Sarowar Jahan Sayid's life" width="1536" height="2048" loading="lazy" decoding="async" />
+                <figcaption>
+                  <strong>Life Outside Work</strong>
+                </figcaption>
+              </figure>
+              <figure class="gallery-card gallery-card-landscape" role="button" tabindex="0" aria-label="Local Roots">
+                <img src="assets/sayid6.jpg" alt="Personal landscape photo connected to Sarowar Jahan Sayid" width="2048" height="1536" loading="lazy" decoding="async" />
+                <figcaption>
+                  <strong>Local Roots</strong>
+                </figcaption>
+              </figure>
+              <figure class="gallery-card gallery-card-landscape" role="button" tabindex="0" aria-label="Work-Life Balance">
+                <img src="assets/sayid7.jpg" alt="Personal gallery image showing Sarowar Jahan Sayid's everyday life" width="2048" height="1536" loading="lazy" decoding="async" />
+                <figcaption>
+                  <strong>Work-Life Balance</strong>
+                </figcaption>
+              </figure>
             </div>
           </div>
         </section>
@@ -198,7 +300,6 @@
             </div>
           </div>
         </section>
-
 
         <section id="education" class="framed-section full-height-section">
           <div class="section-border">
@@ -331,23 +432,23 @@
                     <div class="contact-icon">📞</div>
                     <div class="contact-info">
                       <span class="contact-label">Phone</span>
-                      <p>01721151361</p>
-                      <p>01792110363</p>
-                      <p>01537719390</p>
+                      <p><a href="tel:+8801721151361">01721151361</a></p>
+                      <p><a href="tel:+8801792110363">01792110363</a></p>
+                      <p><a href="tel:+8801537719390">01537719390</a></p>
                     </div>
                   </div>
                   <div class="contact-item">
                     <div class="contact-icon">📧</div>
                     <div class="contact-info">
                       <span class="contact-label">Email</span>
-                      <p>sayid2kx@gmail.com</p>
+                      <p><a href="mailto:sayid2kx@gmail.com">sayid2kx@gmail.com</a></p>
                     </div>
                   </div>
                   <div class="contact-item">
                     <div class="contact-icon">💬</div>
                     <div class="contact-info">
                       <span class="contact-label">WhatsApp</span>
-                      <p><a href="https://wa.me/8801721151361" target="_blank">+880 1721-151361</a></p>
+                      <p><a href="https://wa.me/8801721151361" target="_blank" rel="noopener noreferrer">+880 1721-151361</a></p>
                     </div>
                   </div>
                   <div class="contact-item">
@@ -369,7 +470,7 @@
       <p>© Sarowar Jahan Sayid</p>
     </footer>
 
-    <button id="scroll-to-top" class="scroll-to-top" title="Back to top">
+    <button id="scroll-to-top" class="scroll-to-top" type="button" title="Back to top" aria-label="Back to top">
       <svg
         width="24"
         height="24"
@@ -383,6 +484,14 @@
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     </button>
+
+    <div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true">
+      <button class="gallery-lightbox__backdrop" type="button" aria-label="Close image preview"></button>
+      <div class="gallery-lightbox__content" role="dialog" aria-modal="true" aria-label="Gallery image preview">
+        <button class="gallery-lightbox__close" type="button" aria-label="Close image preview">&times;</button>
+        <img alt="" id="gallery-lightbox-image" />
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
