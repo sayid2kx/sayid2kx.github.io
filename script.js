@@ -12,8 +12,74 @@
   const galleryLightboxImage = document.getElementById("gallery-lightbox-image")
   const galleryLightboxClose = document.querySelector(".gallery-lightbox__close")
   const galleryLightboxBackdrop = document.querySelector(".gallery-lightbox__backdrop")
+  const themeButtons = document.querySelectorAll(".theme-btn")
+  const themeMeta = document.querySelector('meta[name="theme-color"]')
+  const validThemes = ["garden", "cupertino", "paper", "studio"]
+  const themeColors = {
+    garden: "#f0f4f8",
+    cupertino: "#fbfbfd",
+    paper: "#fdfcf8",
+    studio: "#ffffff",
+  }
   let ticking = false
   let activeGalleryCard = null
+
+  const getStoredTheme = () => {
+    try {
+      const s = localStorage.getItem("portfolio-theme")
+      return validThemes.indexOf(s) !== -1 ? s : null
+    } catch {
+      return null
+    }
+  }
+
+  const applyTheme = (theme) => {
+    const t = validThemes.indexOf(theme) !== -1 ? theme : "garden"
+    document.documentElement.setAttribute("data-theme", t)
+    themeButtons.forEach((btn) => {
+      const isActive = btn.getAttribute("data-theme") === t
+      btn.setAttribute("aria-checked", String(isActive))
+      btn.tabIndex = isActive ? 0 : -1
+    })
+    if (themeMeta && themeColors[t]) {
+      themeMeta.setAttribute("content", themeColors[t])
+    }
+    try {
+      localStorage.setItem("portfolio-theme", t)
+    } catch {}
+    document.dispatchEvent(new CustomEvent("themechange", { detail: { theme: t } }))
+  }
+
+  const initTheme = () => {
+    const stored = getStoredTheme()
+    const initial = stored || document.documentElement.getAttribute("data-theme") || "garden"
+    applyTheme(initial)
+  }
+
+  initTheme()
+
+  themeButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const theme = btn.getAttribute("data-theme")
+      if (theme) applyTheme(theme)
+    })
+  })
+
+  const themeSwitcher = document.querySelector(".theme-dock")
+  themeSwitcher?.addEventListener("keydown", (event) => {
+    const keys = ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"]
+    if (keys.indexOf(event.key) === -1) return
+    event.preventDefault()
+    const current = document.documentElement.getAttribute("data-theme") || "garden"
+    let idx = validThemes.indexOf(current)
+    if (event.key === "ArrowLeft" || event.key === "ArrowUp") idx = (idx - 1 + validThemes.length) % validThemes.length
+    else if (event.key === "ArrowRight" || event.key === "ArrowDown") idx = (idx + 1) % validThemes.length
+    else if (event.key === "Home") idx = 0
+    else if (event.key === "End") idx = validThemes.length - 1
+    applyTheme(validThemes[idx])
+    const nextBtn = document.querySelector(`.theme-btn[data-theme="${validThemes[idx]}"]`)
+    nextBtn?.focus()
+  })
 
   const closeMenu = () => {
     if (!navToggle || !navLinks) return
