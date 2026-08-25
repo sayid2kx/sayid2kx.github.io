@@ -206,4 +206,54 @@
     closeMenu()
     window.scrollTo({ top: 0, behavior: smoothBehavior })
   })
+
+  // ── Premium: footer year ──
+  const footerYear = document.getElementById("footer-year")
+  if (footerYear) footerYear.textContent = String(new Date().getFullYear())
+
+  // ── Premium: subtle card spotlight (mouse position) ──
+  const spotlightCards = document.querySelectorAll(".about-card, .skills-feature, .journey-card, .contact-card")
+  spotlightCards.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect()
+      const x = ((e.clientX - rect.left) / rect.width) * 100
+      const y = ((e.clientY - rect.top) / rect.height) * 100
+      card.style.setProperty("--mx", x + "%")
+      card.style.setProperty("--my", y + "%")
+    })
+  })
+
+  // ── Premium: scroll reveals (IntersectionObserver, respects reduced motion) ──
+  if (!prefersReducedMotion && "IntersectionObserver" in window) {
+    const revealTargets = document.querySelectorAll(
+      ".framed-section, .hero .hero-content > *, .hero .hero-image, .about-card, .stat-card, .skills-feature, .gallery-card, .journey-step, .contact-card, .contact-item"
+    )
+    revealTargets.forEach((el, i) => {
+      el.classList.add("reveal")
+      // stagger inside groups
+      if (el.classList.contains("stat-card") || el.classList.contains("gallery-card") || el.classList.contains("journey-step") || el.classList.contains("skills-feature")) {
+        const siblings = el.parentElement ? Array.from(el.parentElement.children) : []
+        const idx = siblings.indexOf(el)
+        if (idx === 1) el.classList.add("reveal-delay-1")
+        else if (idx === 2) el.classList.add("reveal-delay-2")
+        else if (idx >= 3) el.classList.add("reveal-delay-3")
+      }
+    })
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in")
+            io.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.14, rootMargin: "0px 0px -40px 0px" }
+    )
+    revealTargets.forEach((el) => io.observe(el))
+    // hero is in viewport on load — reveal immediately
+    requestAnimationFrame(() => {
+      document.querySelectorAll(".hero .hero-content > *, .hero .hero-image").forEach((el) => el.classList.add("in"))
+    })
+  }
 })()
